@@ -24,7 +24,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if(User.IsInRole("Admin"))
                     {
-                        <li>@Html.ActionLink("Skills Set", "Skill", "Home")</li>
+                        <li>@Html.ActionLink("Skills", "Index", "Skill")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     } 
                 </ul>

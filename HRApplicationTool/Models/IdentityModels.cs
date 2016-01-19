@@ -13,5 +13,7 @@ namespace HRApplicationTool.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<HRApplicationTool.Models.SkillModel> SkillModels { get; set; }
     }
 }

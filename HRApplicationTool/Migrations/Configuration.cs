@@ -45,18 +45,21 @@ namespace HRApplicationTool.Migrations
                     userManager.AddToRole(newUser.Id, "Admin");
                 }
             }
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            if (!context.SkillModels.Any())
+            {
+                context.SkillModels.Add(new SkillModel() { SkillName = "C#" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "Python" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "C++" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "Ruby" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "C" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "C#" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "PHP" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "Go" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "Scala" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "Perl" });
+                context.SkillModels.Add(new SkillModel() { SkillName = "Objective C" });
+            }
+            
         }
     }
 }
