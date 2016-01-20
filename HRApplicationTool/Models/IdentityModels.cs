@@ -15,5 +15,7 @@ namespace HRApplicationTool.Models
         }
 
         public System.Data.Entity.DbSet<HRApplicationTool.Models.SkillModel> SkillModels { get; set; }
+
+        public System.Data.Entity.DbSet<HRApplicationTool.Models.ApplicationModel> ApplicationModels { get; set; }
     }
 }

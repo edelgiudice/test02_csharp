@@ -7,7 +7,10 @@ namespace HRApplicationTool.Models
 {
     public class SkillModel
     {
+        
         public int ID { get; set; }
         public string SkillName { get; set; }
+
+        
     }
 }
