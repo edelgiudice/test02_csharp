@@ -39,8 +39,37 @@ namespace HRApplicationTool.Controllers
         // GET: /Application/Create
         public ActionResult Create()
         {
-            ViewBag.Skills = new MultiSelectList(db.SkillModels.ToList(), "SkillID", "SkillName");
+            if(CheckRegistrationTime)
+            {
+                SetViewBagWithAvailableSkills();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Closed");
+            }
+
+        }
+
+        
+        public ActionResult Closed()
+        {
             return View();
+        }
+
+        public ActionResult ApplicationSent()
+        {
+            return View();
+        }
+
+        private void SetViewBagWithAvailableSkills()
+        {
+            var skills = db.SkillModels.Select(c => new
+            {
+                SkillID = c.SkillID,
+                SkillName = c.SkillName
+            }).ToList();
+            ViewBag.Skills = new MultiSelectList(skills, "SkillID", "SkillName");
         }
 
         // POST: /Application/Create
@@ -48,18 +77,18 @@ namespace HRApplicationTool.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create( ApplicationModel applicationmodel)
+        public async Task<ActionResult> Create([Bind(Include = "ID,RegistrationTime,FirstName,Surname,Address")]ApplicationModel applicationModel, int[] SkillIds)
         {
-            ViewBag.Skills = new MultiSelectList(db.SkillModels.ToList(), "SkillID", "SkillName");
+            SetViewBagWithAvailableSkills();
             if (ModelState.IsValid)
             {
-                
-                db.ApplicationModels.Add(applicationmodel);
+                applicationModel.Skills = db.SkillModels.Where(w => SkillIds.Contains(w.SkillID)).ToList();
+                db.ApplicationModels.Add(applicationModel);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("ApplicationSent");
             }
 
-            return View(applicationmodel);
+            return View();
         }
 
         // GET: /Application/Edit/5
@@ -126,6 +155,13 @@ namespace HRApplicationTool.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public bool CheckRegistrationTime { 
+            get
+            { 
+                return false;
+            }
         }
     }
 }

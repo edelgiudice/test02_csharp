@@ -24,6 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Address)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
         <th></th>
     </tr>
 
@@ -42,8 +45,13 @@
             @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ApplicationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ApplicationID }) |
+            @foreach(var skill in item.Skills)
+            {
+                <div>@skill.SkillName</div>
+            } 
+        </td>
+        <td>
+  
             @Html.ActionLink("Delete", "Delete", new { id=item.ApplicationID })
         </td>
     </tr>

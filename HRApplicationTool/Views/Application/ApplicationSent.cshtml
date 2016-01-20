@@ -1,0 +1,12 @@
+﻿
+
+@{
+    ViewBag.Title = "Application Sent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Thanks!</h1>
+    <p class="lead">The application was correctly recorded</p>
+     @Html.RouteLink("Return Home", new { action = "Index", controller = "Home" },new { @class="btn btn-primary btn-large" })
+</div>

@@ -1,0 +1,12 @@
+﻿
+
+@{
+    ViewBag.Title = "Registration Closed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Sorry</h1>
+    <p class="lead">The registration can be submitted only</p>
+     @Html.RouteLink("Return Home", new { action = "Index", controller = "Home" },new { @class="btn btn-primary btn-large" })
+</div>
