@@ -39,7 +39,7 @@ namespace HRApplicationTool.Controllers
         // GET: /Application/Create
         public ActionResult Create()
         {
-            ViewBag.SkillList = db.SkillModels.ToList();
+            ViewBag.Skills = new MultiSelectList(db.SkillModels.ToList(), "SkillID", "SkillName");
             return View();
         }
 
@@ -48,11 +48,12 @@ namespace HRApplicationTool.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include="ID,RegistrationTime,FirstName,Surname,Address")] ApplicationModel applicationmodel)
+        public async Task<ActionResult> Create( ApplicationModel applicationmodel)
         {
+            ViewBag.Skills = new MultiSelectList(db.SkillModels.ToList(), "SkillID", "SkillName");
             if (ModelState.IsValid)
             {
-                ViewBag.SkillList = db.SkillModels.ToList();
+                
                 db.ApplicationModels.Add(applicationmodel);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

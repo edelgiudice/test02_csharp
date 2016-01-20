@@ -11,6 +11,7 @@ namespace HRApplicationTool.Models
         public ApplicationModel()
         {
             Skills = new HashSet<SkillModel>();
+            RegistrationTime = DateTime.Now;
         }
         public int ApplicationID { set; get; }
         [Display(Name ="Registration Time")]
