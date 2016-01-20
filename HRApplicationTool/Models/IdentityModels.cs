@@ -17,5 +17,26 @@ namespace HRApplicationTool.Models
         public System.Data.Entity.DbSet<HRApplicationTool.Models.SkillModel> SkillModels { get; set; }
 
         public System.Data.Entity.DbSet<HRApplicationTool.Models.ApplicationModel> ApplicationModels { get; set; }
+
+        protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<SkillModel>()
+            .HasKey(t => t.SkillID);
+            modelBuilder.Entity<ApplicationModel>()
+            .HasKey(t => t.ApplicationID);
+
+            modelBuilder.Entity<SkillModel>()
+            .HasMany(t => t.Applications)
+            .WithMany(t => t.Skills)
+             .Map(m =>
+             {
+                 m.ToTable("SkillApplication");
+                 m.MapLeftKey("SkillID");
+                 m.MapRightKey("ApplicationID");
+             });
+           
+        }
     }
 }

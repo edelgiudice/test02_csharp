@@ -165,26 +165,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601192214039_InitialCreate.cs" />
-    <Compile Include="Migrations\201601192214039_InitialCreate.Designer.cs">
-      <DependentUpon>201601192214039_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601192329523_Skill.cs" />
-    <Compile Include="Migrations\201601192329523_Skill.Designer.cs">
-      <DependentUpon>201601192329523_Skill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601200010487_Application.cs" />
-    <Compile Include="Migrations\201601200010487_Application.Designer.cs">
-      <DependentUpon>201601200010487_Application.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601200149574_Relation Application-Skill.cs" />
-    <Compile Include="Migrations\201601200149574_Relation Application-Skill.Designer.cs">
-      <DependentUpon>201601200149574_Relation Application-Skill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601200204539_Relation Application-Skill.cs" />
-    <Compile Include="Migrations\201601200204539_Relation Application-Skill.Designer.cs">
-      <DependentUpon>201601200204539_Relation Application-Skill.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationModel.cs" />
@@ -251,23 +231,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601192214039_InitialCreate.resx">
-      <DependentUpon>201601192214039_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601192329523_Skill.resx">
-      <DependentUpon>201601192329523_Skill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601200010487_Application.resx">
-      <DependentUpon>201601200010487_Application.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601200149574_Relation Application-Skill.resx">
-      <DependentUpon>201601200149574_Relation Application-Skill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601200204539_Relation Application-Skill.resx">
-      <DependentUpon>201601200204539_Relation Application-Skill.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

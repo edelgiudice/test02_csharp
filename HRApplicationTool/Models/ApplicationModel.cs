@@ -8,7 +8,11 @@ namespace HRApplicationTool.Models
 {
     public class ApplicationModel
     {
-        public int ID { set; get; }
+        public ApplicationModel()
+        {
+            Skills = new HashSet<SkillModel>();
+        }
+        public int ApplicationID { set; get; }
         [Display(Name ="Registration Time")]
         public DateTime RegistrationTime { get; set; }
         [Display(Name="First Name")]
