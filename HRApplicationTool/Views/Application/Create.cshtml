@@ -3,8 +3,6 @@
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
-   
 }
 
 <h2>Create</h2>
@@ -47,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Skills, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("SkillIds", (MultiSelectList)ViewBag.Skills, new { multiple = "multiple"})
+                @Html.DropDownList("SkillIds", (MultiSelectList)ViewBag.Skills, new { @class = "multiselect form-control", multiple = "multiple"})
             </div>
         </div>
 

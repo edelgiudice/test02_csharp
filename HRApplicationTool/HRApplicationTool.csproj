@@ -162,6 +162,7 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
+    <Compile Include="Controllers\ToolConfigurationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +226,7 @@
     <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Application\Closed.cshtml" />
     <Content Include="Views\Application\ApplicationSent.cshtml" />
+    <Content Include="Views\ToolConfiguration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

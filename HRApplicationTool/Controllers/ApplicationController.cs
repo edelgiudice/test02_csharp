@@ -159,8 +159,11 @@ namespace HRApplicationTool.Controllers
 
         public bool CheckRegistrationTime { 
             get
-            { 
-                return false;
+            {
+                var now = DateTime.Now;
+                var startHour = DateTime.Today.AddHours(ToolConfiguration.Instance.StartHour).AddMinutes(ToolConfiguration.Instance.StartMin);
+                var endHour = DateTime.Today.AddHours(ToolConfiguration.Instance.EndHour).AddMinutes(ToolConfiguration.Instance.EndMin);
+                return (now >= startHour) && (now <= endHour);
             }
         }
     }

@@ -1,0 +1,43 @@
+﻿@model HRApplicationTool.Models.ToolConfiguration
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Configuration</h2>
+@Html.RouteLink("Edit Configuration", new { action = "Edit", controller = "ToolConfiguration" }, new { @class = "btn btn-primary btn-small" })
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndMin)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayTextFor(model => model.StartHour)
+        </td>
+        <td>
+            @Html.DisplayTextFor(model => model.StartMin)
+        </td>
+        <td>
+            @Html.DisplayTextFor(model => model.EndHour)
+        </td>
+        <td>
+            @Html.DisplayTextFor(model => model.EndMin)
+        </td>
+    </tr>
+</table>
+
+
+
