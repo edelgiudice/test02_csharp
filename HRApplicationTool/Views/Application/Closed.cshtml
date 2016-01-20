@@ -1,4 +1,4 @@
-﻿
+﻿@model HRApplicationTool.Models.ToolConfiguration
 
 @{
     ViewBag.Title = "Registration Closed";
@@ -7,6 +7,6 @@
 
 <div class="jumbotron">
     <h1>Sorry</h1>
-    <p class="lead">The registration can be submitted only</p>
+    <p class="lead">The registration can be submitted only between @Model.StartHour:@Model.StartMin and @Model.EndHour:@Model.EndMin</p>
      @Html.RouteLink("Return Home", new { action = "Index", controller = "Home" },new { @class="btn btn-primary btn-large" })
 </div>

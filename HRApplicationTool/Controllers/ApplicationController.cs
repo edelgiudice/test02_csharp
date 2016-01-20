@@ -54,7 +54,7 @@ namespace HRApplicationTool.Controllers
         
         public ActionResult Closed()
         {
-            return View();
+            return View(ToolConfiguration.Instance);
         }
 
         public ActionResult ApplicationSent()

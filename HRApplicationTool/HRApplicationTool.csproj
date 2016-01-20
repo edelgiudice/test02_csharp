@@ -227,6 +227,7 @@
     <Content Include="Views\Application\Closed.cshtml" />
     <Content Include="Views\Application\ApplicationSent.cshtml" />
     <Content Include="Views\ToolConfiguration\Index.cshtml" />
+    <Content Include="Views\ToolConfiguration\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

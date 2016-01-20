@@ -27,11 +27,15 @@ namespace HRApplicationTool.Controllers
         //
         // POST: /ToolConfiguration/Edit/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
+                ToolConfiguration.Instance.StartMin = collection["StartMin"] ==null ? ToolConfiguration.Instance.StartMin : Convert.ToInt32(collection["StartMin"]);
+                ToolConfiguration.Instance.StartHour = collection["StartHour"] == null ? ToolConfiguration.Instance.StartHour : Convert.ToInt32(collection["StartHour"]);
+                ToolConfiguration.Instance.EndMin = collection["EndMin"] == null ? ToolConfiguration.Instance.EndMin : Convert.ToInt32(collection["EndMin"]);
+                ToolConfiguration.Instance.EndHour = collection["EndHour"] == null ? ToolConfiguration.Instance.EndHour : Convert.ToInt32(collection["EndHour"]);
 
                 return RedirectToAction("Index");
             }
