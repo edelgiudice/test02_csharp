@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,8 +17,38 @@ namespace HRApplicationTool.Controllers
         { 
             return View(ToolConfiguration.Instance); 
         }
+        
+        public ActionResult SendReport()
+        {
+            var fromAddress = new MailAddress("edguktest@gmail.com");
+            var fromPassword = "ed220709";
+            var toAddress = new MailAddress("emilio.delgiudice@gmail.com");
+
+            string subject = "subject";
+            string body = "body";
+
+            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
 
 
+            smtp.Send(message);
+           
+            return RedirectToAction("Index","Home");
+        }
         //
         // GET: /ToolConfiguration/Edit/5
         public ActionResult Edit()
