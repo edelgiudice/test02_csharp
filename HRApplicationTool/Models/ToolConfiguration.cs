@@ -32,6 +32,7 @@ namespace HRApplicationTool.Models
           }
        }
         [Display(Name="Start Hour")]
+        [DisplayFormat(DataFormatString = "{00}")]
         [Range(typeof(int), "0", "23")]
         public int StartHour { get; set; }
         
