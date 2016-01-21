@@ -8,37 +8,38 @@
 @Html.RouteLink("Edit Configuration", new { action = "Edit", controller = "ToolConfiguration" }, new { @class = "btn btn-primary btn-small" })
 @Html.RouteLink("Send Report Now", new { action = "SendReport", controller = "ToolConfiguration" }, new { @class = "btn btn-primary btn-small" })
 
+<a href="~/hangfire" class="btn btn-primary btn-small">Scheduler</a>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.StartHour)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartMin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndHour)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndMin)
-        </th>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayTextFor(model => model.StartHour)
-        </td>
-        <td>
-            @Html.DisplayTextFor(model => model.StartMin)
-        </td>
-        <td>
-            @Html.DisplayTextFor(model => model.EndHour)
-        </td>
-        <td>
-            @Html.DisplayTextFor(model => model.EndMin)
-        </td>
-    </tr>
-</table>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndMin)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayTextFor(model => model.StartHour)
+            </td>
+            <td>
+                @Html.DisplayTextFor(model => model.StartMin)
+            </td>
+            <td>
+                @Html.DisplayTextFor(model => model.EndHour)
+            </td>
+            <td>
+                @Html.DisplayTextFor(model => model.EndMin)
+            </td>
+        </tr>
+    </table>
 
 
 

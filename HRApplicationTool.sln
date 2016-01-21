@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationTool", "HRApplicationTool\HRApplicationTool.csproj", "{BB786B5D-9C6C-49A6-BE13-49BB797A31F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationTool.Tests", "HRApplicationTool.Tests\HRApplicationTool.Tests.csproj", "{05566938-E6FA-4460-BBE9-FDFD18640738}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{BB786B5D-9C6C-49A6-BE13-49BB797A31F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB786B5D-9C6C-49A6-BE13-49BB797A31F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB786B5D-9C6C-49A6-BE13-49BB797A31F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05566938-E6FA-4460-BBE9-FDFD18640738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05566938-E6FA-4460-BBE9-FDFD18640738}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05566938-E6FA-4460-BBE9-FDFD18640738}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05566938-E6FA-4460-BBE9-FDFD18640738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
